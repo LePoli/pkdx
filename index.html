@@ -1,0 +1,212 @@
+<!--A tu disposición se encuentra un auto evaluador para revisar tu página. Para esto, guíate por las
+siguientes recomendaciones:
+Se debe usar la fuente Open Sans , con sus respectivos pesos, donde correspondan .
+Debe existir alguna clase en común para la sección de barra de navegación y footer. A esa
+clase se le debe añadir la propiedad CSS de color de fondo, indicando el color en formato
+hexadecimal o como variable de raíz. (Revisar el siguiente link).
+Debe añadirse el logo.png y el logo-footer.png donde corresponda.
+Debe existir la clase de Bootstrap text-white donde corresponda.
+Debe haber una sección con la clase icons-section donde estarán los íconos de fontawesome .
+Esta sección tiene un color de fondo específico.
+Debe ocultarse cuando la página este en dispositivos o ventana de visualización
+pequeñas.(Revisar el siguiente link).
+Se debe utilizar los íconos mencionados, con sus respectivas clases de font-awesome .-->
+<!--
+    falta:
+    Optimizar clases con boostrap
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <meta name="author" content="Paula Alarcon">
+    <meta name="description" content="pokemon">
+    <meta name="keywords" content="pokemon, pokedex, who's that pokemon?">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!--boostrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--js - jq - boostrap-->
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!--canvas js-->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="assets/js/main.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark">
+        <a class="navbar-brand" href="index.html">
+            <img class="logo" src="assets/img/Pok_mon_logo_(Transparent_Background).png" loading="lazy">
+        </a>
+        <button class="navbar-toggler d-sm-block d-md-none" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-md-block d-sm-none">
+            <ul class="nav justify-content-end flex-sm-column flex-md-row d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link nav-text pokedex_selected" id="nav_pokedex" href="#">Pokedex</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-text game" id="game" href="#">Jugar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-text" href="https://www.pokemon.com/es/pokedex/">Llevame al sitio oficial</a>
+                </li>
+            </ul>
+        </div>
+        <div class="w-100">
+            <ul class="nav justify-content-end collapse flex-column" id="navbarToggler">
+                <li class="nav-item">
+                    <a class="nav-link nav-text pokedex_selected" id="nav_pokedex_" href="#">Pokedex</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-text game" id="game_" href="#">Jugar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-text" href="https://www.pokemon.com/es/pokedex/">Llevame al sitio oficial</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header class="active_section">
+        <div class="">
+            <h1 class="text-center color-blue">Bienvenido!!</h1>
+            <h2 class="text-center color-blue">Que quieres hacer?</h2>
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center justify-content-center flex-column pokedex_selected" id="pokedex_box">
+                    <img class="init_img" src="assets/img/pokedex.gif">
+                    <h3 class="text-center">Quiero buscar en pokedex</h3>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-center flex-column game" id="guess_box">
+                    <img class="init_img" src="assets/img/phone.gif">
+                    <h3 class="text-center">Quiero jugar a adivinar un pokemon</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="guess_section" style="display: none;">
+        <div class="app d-flex flex-column align-items-center justify-content-center">
+            <div id="load">
+                <img id="loading" src="assets/img/pokeball.gif">
+            </div>
+            <div class="" id="pokemon" style="display: none;">
+                <img id="" src="" style="filter: brightness(0);" loading=lazy>
+            </div>
+            <input class="" style="display: none;" id="guessinput">
+            <button class="mt-4" style="display: none;" id="guess">Guess!</button>
+            <div>
+                <p id="name" style="visibility: hidden;"></p>
+            </div>
+        </div>
+    </section>
+    <section id="pokedex_section" style="display: none;">
+        <div class="row" id="load_pkdex">
+            <div class="col-md-12">
+                <img class="loading" src="assets/img/runing.gif">
+            </div>
+        </div>
+        <div id="input_find" class="row mb-5" style="display: none;">
+            <div class="w-100 d-flex flex-column align-items-center justify-content-center">
+                <h2 class="mb-0 color-blue">
+                    Busca un pokemon!
+                </h2>
+                <p class="mb-5 color-blue">
+                    Puedes buscar segun su id de pokedex o el nombre.
+                </p>
+            </div>
+            <div class="col-md-12">
+                <label for="find" class="w-100 color-blue">
+                    Ingresa en el recuadro blanco y pulsa buscar
+                </label>
+                <input id="find">
+                <button id="find_button">buscar</button>
+            </div>
+        </div>
+        <div id="pkdx" class="row" style="display: none;">
+            <div class="col-md-12">
+                <p id="name_pkdx" class="color-blue"></p>
+                <p id="title_name" class="color-blue"></p>
+            </div>
+            <div class="col-md-6" id="pokedex">
+                <div id="picture" class=" d-flex align-items-center justify-content-center">
+                    <img src="" id="finded_pokemon">
+                </div>
+            </div>
+            <div class="col-md-6" id="">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="color-blue"><b>Altura:</b> <span id="height"></span></p>
+                        <p class="color-blue"><b>Peso:</b> <span id="weight"></span></p>
+                        <p class="color-blue"><b>Sexo:</b> <span id="sex"><i class="fas fa-venus"></i><i class="fas fa-mars"></i></span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="color-blue">
+                            <b>Categoria: </b><span id="categoria"></span>
+                        </p>
+                        <p class="color-blue">
+                            <b>Habilidad: </b><span id="habilidad"></span>
+                        </p>
+                        <p class="color-blue"><b>Tipo:</b><span id="tipo"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="stats">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="succes" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center">
+                    <img src="assets/img/yosh.gif">
+                    <h5 class="modal-title">Yei!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <img id="img_" src>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fail" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center">
+                    <img src="assets/img/nope.gif">
+                    <h5 class="modal-title">Buuu!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <img id="img_f" src>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="d-flex align-items-center justify-content-center">
+        <img src="assets/img/pokeball2.png">
+    </footer>
+</body>
+
+</html>
